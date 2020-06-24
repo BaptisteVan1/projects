@@ -1,0 +1,4 @@
+#!/bin/bash
+find -name "*-2020.txt" | xargs cat > bash_diary.txt
+date >> ~/bash_task_logs.txt
+
