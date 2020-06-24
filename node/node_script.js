@@ -9,7 +9,13 @@ const main = async () => {
 	const files = await promisifiedReadDir(DIARIES_DIRECTORY)
 	for (const file of files) {
 		const readStream = await fs.createReadStream(`${DIARIES_DIRECTORY}/${file}`, 'utf-8')
+
+
 		console.log(`${DIARIES_DIRECTORY}/${file}`)
+
+
+
+		
 		readStream.pipe(process.stdout)
 	}
 }
@@ -23,6 +29,8 @@ main()
 		See Q5 for details on callback and promise
 
 		a change on master
+
+		hello world
 
 	2. what does async/await do?
 		Async/await: async makes a function always return a promise, await tells a function to wait for the promise to be returned before continuing?
