@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <nav>
+            <p><a href="/">Home page</a></p>
+            <p><a href="/contact">Contact</a></p>
+            <p><a href="/complaint">Complaint</a></p>
+        </nav>
+        <h1>Contact me!</h1>
+        <p>Let's get in touch!</p>
+        <form action="/complaint" method="POST">
+            <label for="requester_name">What is your name</label><br>
+            <input type="text" id="requester_name" name="requester_name"><br>
+            <label for="content">What is your issue?</label><br>
+            <textarea type="text" id="content" name="content" cols="50" rows="4"></textarea><br>
+            <label for="tel">Your phone number</label><br>
+            <input type="number" id="tel" name="tel"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
