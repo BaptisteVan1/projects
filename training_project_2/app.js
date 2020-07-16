@@ -1,4 +1,3 @@
-// My app.js
 const http = require('http')
 // we need fs because each http request will ba handled by creating a readstream and piping it to response
 // fs will read the file to be piped
