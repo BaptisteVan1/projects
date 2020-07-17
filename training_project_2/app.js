@@ -1,3 +1,4 @@
+// My app.js
 const http = require('http')
 // we need fs because each http request will ba handled by creating a readstream and piping it to response
 // fs will read the file to be piped
@@ -5,10 +6,19 @@ const fs = require('fs')
 const mongoose = require('mongoose')
 const { parse } = require('querystring')
 const { request } = require('http')
+const dotenv = require('dotenv').config()
+
 
 // connect to DB
-mongoose.connect('mongodb+srv://baptiste:<password>@cluster0.myfpj.mongodb.net/DB-Test-made-contact?retryWrites=true&w=majority')
 
+mongoose.connect('mongodb+srv://cluster0.myfpj.mongodb.net/', {
+    dbName:process.env.DB_NAME,
+    user:process.env.DB_USER,
+    pass:process.env.DB_PASS,
+    userNewUrlParse: true,
+    userUnifiedTopology: true,
+    userFindandModify: false
+})
 // checking if DB is properly connected
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'An error has occured: '))
